@@ -1,7 +1,20 @@
 {
-  "name": "node-example",
-  "version": "0.10.0",
-  "dependencies": {
-    "express": "2.2.0"
+  "name": "meinders-site-test",
+  "version": "0.0.0",
+  "description": "ERROR: No README.md file found!",
+  "main": "web.js",
+  "engines": {
+    "node": ">=0.6"
   }
+  "dependencies": {
+    "express": "~2.2.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": "",
+  "author": "",
+  "license": "BSD",
+  "gitHead": "6d7a5a0209774a891edfe8d86e7f3197f37ba9a0"
 }
