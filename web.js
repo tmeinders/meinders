@@ -22,17 +22,13 @@ app.get('/', function(request, response) {
   });
 
 
-  fs.readFile('./test2.html', function(error, content) {
-    if (error) {
-      response.writeHead(500);
-      response.end();
-    }
-    else {
-      response.send('you are using the shortener 2');
-    }
-  });
     //response.send('Hello World2!');
   }
+});
+
+
+app.get('/test2.html', function(request, response) {
+  response.send('you are using the shortener 2');
 });
 
 var port = process.env.PORT || 3000;
