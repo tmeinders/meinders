@@ -6,7 +6,7 @@ var app = express.createServer(express.logger());
 app.get('/', function(request, response) {
   if (request.headers.host === 'www.meinde.rs')
   {
-    res.redirect(302,'http://www.meinders.com/test2.html');
+    response.redirect(302,'http://www.meinders.com/test2.html');
   }
   else
   {
