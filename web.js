@@ -1,14 +1,14 @@
 var express = require('express');
 var fs = require('fs');
 
-var app = express.createServer(express.logger());
+var app = express();
 
 app.get('*', function(request, response, next) {
   
   console.log('* is executing');
   if (request.headers.host === 'www.meinde.rs')
   {
-    response.redirect('http://www.meinders.com/test2.html');
+    response.redirect(307,'http://www.meinders.com/test2.html');
     response.end();
     console.log('redirecting...');
   }
