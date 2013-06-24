@@ -3,13 +3,24 @@ var fs = require('fs');
 
 var app = express.createServer(express.logger());
 
-app.get('/', function(request, response) {
+app.get('*', function(request, response, next) {
+  
+  console.log('* is executing');
   if (request.headers.host === 'www.meinde.rs')
   {
-    response.redirect('302','http://www.meinders.com/test2.html');
+    response.redirect('http://www.meinders.com/test2.html');
+    response.end();
+    console.log('redirecting...');
   }
   else
   {
+    next();
+  }
+});
+
+app.get('/', function(request, response) {
+  console.log('host: ' + request.headers.host);
+  console.log('/ is executing');
   fs.readFile('./index.html', function(error, content) {
     if (error) {
       response.writeHead(500);
@@ -22,8 +33,7 @@ app.get('/', function(request, response) {
   });
 
 
-    //response.send('Hello World2!');
-  }
+  //response.send('Hello World2!');
 });
 
 
