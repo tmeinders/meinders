@@ -1,6 +1,9 @@
 var express = require('express');
 var fs = require('fs');
 
+
+var redis = require("redis-url").connect(process.env.MYREDIS_URL);
+
 var app = express();
 
 app.get('*', function(request, response, next) {
@@ -8,7 +11,7 @@ app.get('*', function(request, response, next) {
   console.log('* is executing');
   if (request.headers.host === 'www.meinde.rs')
   {
-    response.redirect(307,'http://www.meinders.com/test2.html');
+    response.redirect(302,'http://www.meinders.com/test2.html');
     response.end();
     console.log('redirecting...');
   }
