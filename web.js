@@ -2,7 +2,7 @@ var express = require('express');
 var fs = require('fs');
 
 
-var redis = require("redis-url").connect(process.env.MYREDIS_URL);
+//var redis = require("redis-url").connect(process.env.MYREDIS_URL);
 
 var app = express();
 
