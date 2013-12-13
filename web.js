@@ -40,6 +40,24 @@ app.get('/', function(request, response) {
 });
 
 
+app.get('/resume', function(request, response) {
+  console.log('host: ' + request.headers.host);
+  console.log('/ is executing');
+  fs.readFile('./TravisMeindersResume.pdf', function(error, content) {
+    if (error) {
+      response.writeHead(500);
+      response.end();
+    }
+    else {
+      response.writeHead(200, { 'Content-Type': 'application/pdf' });
+      response.end(content);
+    }
+  });
+});
+
+
+
+
 app.get('/test2.html', function(request, response) {
   response.send('you are using the shortener 2');
 });
