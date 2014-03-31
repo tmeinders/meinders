@@ -37,13 +37,6 @@ app.get('/resume', function(request, response) {
   });
 });
 
-
-
-
-app.get('/test2.html', function(request, response) {
-  response.send('you are using the shortener 2');
-});
-
 var port = process.env.PORT || 3000;
 app.listen(port, function() {
   console.log("Listening on " + port);
